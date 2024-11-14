@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form id="contactForm" action="/send-email" method="POST">
+        <label for="senderEmail">Your Email:</label>
+        <input type="email" id="senderEmail" name="senderEmail" required><br><br>
+
+        <label for="recipients">Recipient(s) Email (comma separated):</label>
+        <input type="text" id="recipients" name="recipients" required><br><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+
+        <button type="submit">Send Email</button>
+    </form>
+
+    <script>
+        // Set the form action to use the deployed BASE_URL
+        document.getElementById('contactForm').action = `${window.location.origin}/send-email`;
+    </script>
+</body>
+</html>
